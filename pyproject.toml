@@ -1,7 +1,7 @@
 [project]
-name = "hw-rest-api-2"
+name = "qaguru_17_19_1"
 version = "0.1.0"
-description = "Testing rest api and UI"
+description = "Testing mobile apps. Home work 1."
 authors = [
     {name = "pavelkalinchuk",email = "715m4s@gmail.com"}
 ]
@@ -15,6 +15,8 @@ dependencies = [
     "appium-python-client (>=4.5.1,<5.0.0)",
 ]
 
+[tool.pytest.ini_options]
+addopts = "--alluredir=allure-results --clean-alluredir"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
