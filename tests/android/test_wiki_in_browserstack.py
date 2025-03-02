@@ -3,7 +3,7 @@ from appium.webdriver.common.appiumby import AppiumBy
 from selene import browser, have
 
 
-def test_search():
+def test_search(android_mobile_management):
     with step('Открыть поиск'):
         # Нажать на кнопку поиска
         browser.element((AppiumBy.ACCESSIBILITY_ID, "Search Wikipedia")).click()

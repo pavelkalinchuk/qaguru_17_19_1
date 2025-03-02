@@ -2,9 +2,11 @@ import pytest
 from selene import browser
 import os
 
+from utils import allure_attach
+
 
 @pytest.fixture(scope='function', autouse=True)
-def browser_management():
+def web_browser_management():
     browser.config.base_url = os.getenv(
         'base_url', 'https://www.wikipedia.org'
     )
@@ -17,5 +19,7 @@ def browser_management():
     browser.config.timeout = float(os.getenv('timeout', '3.0'))
 
     yield
+
+    allure_attach.add_screenshot(browser)
 
     browser.quit()
