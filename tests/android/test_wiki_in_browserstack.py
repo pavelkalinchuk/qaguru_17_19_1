@@ -4,15 +4,13 @@ from selene import browser, have
 
 
 def test_search(android_mobile_management):
-    with step('Открыть поиск'):
-        # Нажать на кнопку поиска
+    with step('Находим и кликаем на строке поиска'):
         browser.element((AppiumBy.ACCESSIBILITY_ID, "Search Wikipedia")).click()
 
-    with step('Ввести текст для поиска'):
-        # Ввести текст "Appium" в поле поиска
+    with step('Вводим текст для поиска'):
         browser.element((AppiumBy.ID, "org.wikipedia.alpha:id/search_src_text")).type('Appium')
 
-    with step('Проверить результаты поиска'):
+    with step('Проверяем результаты поиска'):
         # Получить все элементы с результатами поиска
         results = browser.all((AppiumBy.ID, 'org.wikipedia.alpha:id/page_list_item_title'))
 

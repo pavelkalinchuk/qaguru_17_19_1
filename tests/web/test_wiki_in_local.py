@@ -3,7 +3,8 @@ from allure import step
 
 
 def test_search(web_browser_management):
-    browser.open('/')
+    with step('Запускаем браузер со страницей википедия'):
+        browser.open('/')
 
     with step('Type search'):
         browser.element('#searchInput').type('AppImage')
